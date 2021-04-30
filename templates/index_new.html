@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Car Price Prediction</title>
+</head>
+
+<body>
+
+    <div style="color:black">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1>Used Car Price Prediction</h1>
+            <h4>This is the demonstration of a data science project done to predict the price of Used Cars. </h4></br></br>
+
+            <h3>Select Your City</h3><select id="First" name="Location" required="required">
+              <option value="--Select--">--Select--</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Jaipur">Jaipur</option>
+              <option value="Ahmedabad">Ahmedabad</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Coimbatore">Coimbatore</option>
+              <option value='Pune'>Pune</option>
+              <option value='Bangalore'>Bangalore</option>
+              <option value='Kochi'>Kochi</option></select>
+            <h3>Year of Purchase</h3>
+            <input id="Second" name="Year" type="number ">
+            <h3>How Many Kilometers Driven?</h3><input id="Second" name="Kilometers_Driven" required="required">
+            <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type" id="First" required="required">
+                <option value="--Select--">--Select--</option>
+                <option value="CNG">CNG</option>
+                <option value="LPG">LPG</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Electric">Electric</option>
+            </select>
+            <h3>Transmission type</h3><br><select name="Transmission" id="First" required="required">
+                <option value="--Select--">--Select--</option>
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+            <h3>How many owners previously had this car?</h3><br><select id="First" name="Owner_Type" required="required">
+                <option value="--Select--">--Select--</option>
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+                <option value="Fourth and Above">Fourth and Above</option></select>
+              <h3>Mileage</h3>
+              <input id="Second" name="Mileage" type="number ">
+              <h3>Engine</h3>
+              <input id="Second" name="Engine" type="number ">
+              <h3>Seats</h3>
+              <input id="Second" name="Seats" type="number ">
+
+            <h3>Calculate the Selling Price</h3>
+            <br><button id="submit" type="submit ">Submit</button>
+          </br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><br><h2>{{ prediction_text }}<h2>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: DarkTurquoise;
+            text-align: center;
+            padding: 0px;
+        }
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        #transmission {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+
+
+
+        #fuel {
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        #fuel:hover {
+            background-color: F9FF33;
+        }
+
+        #Owner_Type {
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #Owner_Type:hover {
+            background-color: F9FF33;
+        }
+
+        #transmission {
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #transmission:hover {
+            background-color: F9FF33;
+        }
+
+        #submit {
+            width: 120px;
+            height: 60px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #submit:hover {
+            background-color: darkcyan;
+        }
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #sixth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #seventh {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
